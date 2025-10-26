@@ -158,6 +158,9 @@ class Template:
         if color is not None:
             fill = {"fill": color}
 
+        if isinstance(data_element, float) and data_element != data_element:
+            return {"string": "", **fill}
+
         if isinstance(data_element, datetime):
             return {"date": data_element.strftime("%Y-%m-%d"), **fill}
 
@@ -232,7 +235,7 @@ class Template:
 
         spec = {}
         spec["name"] = str(name)
-        chart_categories = [None] + [
+        chart_categories = [{"string": ""}] + [
             self._transform_input(element) for element in categories
         ]
 
