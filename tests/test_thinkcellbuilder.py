@@ -92,7 +92,7 @@ def test_add_chart():
             {
                 "name": "Cool Name",
                 "table": [
-                    [None, {"string": "Alpha"}, {"string": "bravo"}],
+                    [{"string": ""}, {"string": "Alpha"}, {"string": "bravo"}],
                     [],
                     [
                         {"number": 3},
@@ -126,7 +126,7 @@ def test_add_chart_with_fill():
             {
                 "name": "Cool Name",
                 "table": [
-                    [None, {"string": "Alpha"}, {"string": "bravo"}],
+                    [{"string": ""}, {"string": "Alpha"}, {"string": "bravo"}],
                     [],
                     [
                         {"number": 3, "fill": "#70AD47"},
@@ -176,7 +176,7 @@ def test_add_chart_from_dataframe():
                 "name": "Cool Chart",
                 "table": [
                     [
-                        None,
+                        {"string": ""},
                         {"string": "Employees"},
                         {"string": "Revenue"},
                         {"string": "Other"},
@@ -228,7 +228,7 @@ def test_add_chart_from_dataframe_with_fill():
                 "name": "Cool Chart",
                 "table": [
                     [
-                        None,
+                        {"string": ""},
                         {"string": "Employees"},
                         {"string": "Revenue"},
                         {"string": "Other"},
@@ -519,7 +519,7 @@ def test_add_scatter():
                 "name": "Scatter Batter",
                 "table": [
                     [
-                        None,
+                        {"string": ""},
                         {"string": "Employees"},
                         {"string": "Revenue"},
                         {"string": "None"},
