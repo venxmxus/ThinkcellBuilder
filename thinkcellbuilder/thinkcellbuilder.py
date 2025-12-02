@@ -164,11 +164,17 @@ class Template:
         if isinstance(data_element, datetime):
             return {"date": data_element.strftime("%Y-%m-%d"), **fill}
 
-        if isinstance(data_element, str):
+        elif isinstance(data_element, str):
             return {"string": data_element, **fill}
 
-        if isinstance(data_element, (int, float)):
+        elif isinstance(data_element, int):
             return {"number": data_element, **fill}
+
+        elif isinstance(data_element, float):
+            if 0 < data_element < 1:
+                return {"percentage": data_element * 100, **fill}
+            else:
+                return {"number": data_element, **fill}
         else:
             raise ValueError(
                 f"{data_element} of type {type(data_element)} is not acceptable."
