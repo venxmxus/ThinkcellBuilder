@@ -171,7 +171,7 @@ class Template:
             return {"number": data_element, **fill}
 
         elif isinstance(data_element, float):
-            if 0 < data_element < 1:
+            if -100 < data_element < 100:
                 return {"percentage": data_element * 100, **fill}
             else:
                 return {"number": data_element, **fill}
